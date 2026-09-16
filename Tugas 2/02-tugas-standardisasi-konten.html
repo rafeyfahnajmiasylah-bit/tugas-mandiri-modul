@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daftar Publikasi Penelitian Dosen Manajemen</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 20px;
+            font-size: 30px;
+        }
+
+        header figure {
+            margin: 0 auto 15px;
+        }
+
+        header img {
+            width: 120px;
+            height: auto;
+            background-color: white;
+            padding: 8px;
+            border-radius: 10px;
+        }
+
+        header figcaption {
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        header p {
+            max-width: 800px;
+            margin: 15px auto 0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #0b3d91;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0b3d91;
+            padding-bottom: 8px;
+        }
+
+
+        /* =========================
+           TABEL PUBLIKASI
+           ========================= */
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: left;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        th,
+        td {
+            border: 1px solid #cfd5dc;
+            padding: 12px 10px;
+            vertical-align: middle;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        thead th {
+            background-color: #0b3d91;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+        }
+
+        tbody th {
+            background-color: #f1f5f9;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        tbody td {
+            vertical-align: middle;
+        }
+
+        tbody tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+
+        tbody tr:hover td,
+        tbody tr:hover th {
+            background-color: #eaf1fb;
+        }
+
+        tfoot th,
+        tfoot td {
+            background-color: #dfe8f5;
+            font-weight: bold;
+        }
+
+        tfoot td {
+            text-align: center;
+        }
+
+
+        /* =========================
+           BIDANG KEAHLIAN
+           ========================= */
+
+        ol {
+            padding-left: 25px;
+        }
+
+        ol > li {
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        ol ul {
+            margin-top: 8px;
+            font-weight: normal;
+        }
+
+        ol ul li {
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================
+           METODOLOGI PENELITIAN
+           ========================= */
+
+        .metodologi {
+            text-align: center;
+        }
+
+        .alur {
+            max-width: 500px;
+            margin: 25px auto;
+        }
+
+        .tahap {
+            background-color: #eef3f9;
+            border: 2px solid #0b3d91;
+            border-radius: 8px;
+            padding: 12px;
+            font-weight: bold;
+        }
+
+        .panah {
+            font-size: 24px;
+            color: #0b3d91;
+            line-height: 1.2;
+            margin: 5px 0;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figcaption {
+            margin-top: 15px;
+            color: #555;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           DESKRIPSI RISET
+           ========================= */
+
+        .deskripsi {
+            text-align: justify;
+        }
+
+
+        /* =========================
+           SUMBER DATA
+           ========================= */
+
+        #sumber ul {
+            padding-left: 25px;
+        }
+
+        #sumber li {
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background-color: #0b3d91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+           ========================= */
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                min-width: 900px;
+                font-size: 13px;
+            }
+
+            th,
+            td {
+                padding: 9px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>Daftar Publikasi Penelitian Dosen</h1>
+
+        <figure>
+
+            <img
+                src="unhas_logo.png"
+                alt="Logo Universitas Hasanuddin"
+            >
+
+            <figcaption>
+                Universitas Hasanuddin
+            </figcaption>
+
+        </figure>
+
+        <p>
+            Halaman ini menyajikan daftar publikasi ilmiah dosen
+            Manajemen Universitas Hasanuddin, bidang keahlian,
+            serta alur metodologi penelitian.
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             DAFTAR PUBLIKASI
+             ========================= -->
+
+        <section aria-labelledby="publikasi">
+
+            <h2 id="publikasi">
+                Daftar Publikasi Ilmiah
+            </h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <caption>
+                        Daftar Publikasi Penelitian Dosen Manajemen
+                        Universitas Hasanuddin
+                    </caption>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th scope="col" rowspan="2">
+                                No.
+                            </th>
+
+                            <th scope="col" rowspan="2">
+                                Nama Dosen
+                            </th>
+
+                            <th scope="col" colspan="3">
+                                Informasi Publikasi
+                            </th>
+
+                            <th scope="col" rowspan="2">
+                                Bidang Keahlian
+                            </th>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <th scope="col">
+                                Tahun
+                            </th>
+
+                            <th scope="col">
+                                Judul Publikasi
+                            </th>
+
+                            <th scope="col">
+                                Jenis
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <!-- DOSEN 1 -->
+
+                        <tr>
+
+                            <th scope="row">
+                                1
+                            </th>
+
+                            <td rowspan="2">
+                                Muh. Idrus Taba, S.E., M.Si.
+                            </td>
+
+                            <td>
+                                2023
+                            </td>
+
+                            <td>
+                                The Effect of Remuneration, Work Motivation,
+                                Work Discipline on Employee Performance
+                                through Job Satisfaction at the BKD Office
+                                of South Sulawesi Province
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                            <td rowspan="2">
+                                Manajemen Sumber Daya Manusia
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <th scope="row">
+                                2
+                            </th>
+
+                            <td>
+                                2022
+                            </td>
+
+                            <td>
+                                The Effect of Leadership Style and Compensation
+                                on Employee Performance Mediated By Work
+                                Motivation At PT Mitra Karsa Utama Makassar
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                        </tr>
+
+
+                        <!-- DOSEN 2 -->
+
+                        <tr>
+
+                            <th scope="row">
+                                3
+                            </th>
+
+                            <td rowspan="2">
+                                Nurdjanah Hamid, S.E., M.Si.
+                            </td>
+
+                            <td>
+                                2024
+                            </td>
+
+                            <td>
+                                The impact of knowledge-oriented leadership
+                                on innovation performance with e-based
+                                knowledge management system as mediating
+                                variable
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                            <td rowspan="2">
+                                Leadership &amp;
+                                Organizational Management
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <th scope="row">
+                                4
+                            </th>
+
+                            <td>
+                                2023
+                            </td>
+
+                            <td>
+                                Do Workload And OCB Affect Employee
+                                Peformance Moderated by Satisfication?
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                        </tr>
+
+
+                        <!-- DOSEN 3 -->
+
+                        <tr>
+
+                            <th scope="row">
+                                5
+                            </th>
+
+                            <td rowspan="2">
+                                Idayanti Nursyamsi, S.E., M.Si.
+                            </td>
+
+                            <td>
+                                2023
+                            </td>
+
+                            <td>
+                                The Influence Work Overload And Job Stress
+                                Through Preceived Organization Support On
+                                Job Performance At Pos Regional Vi
+                                Makassar Employee
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                            <td rowspan="2">
+                                Manajemen Sumber Daya Manusia
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <th scope="row">
+                                6
+                            </th>
+
+                            <td>
+                                2023
+                            </td>
+
+                            <td>
+                                The Influence of Recruitment on Onboarding
+                                Programs, Mentoring Programs and Their
+                                Impact on Employee Performance at PT
+                                Borwita Citra Prima, Makassar City
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                        </tr>
+
+
+                        <!-- DOSEN 4 -->
+
+                        <tr>
+
+                            <th scope="row">
+                                7
+                            </th>
+
+                            <td rowspan="2">
+                                Siti Haerani, S.E., M.Si.
+                            </td>
+
+                            <td>
+                                2023
+                            </td>
+
+                            <td>
+                                The Influence of Personality and Leadership
+                                on Organizational Citizenship Behavior and
+                                Its Impact on the Performance of Family
+                                Hope Facilitators in North Toraja Regency
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                            <td rowspan="2">
+                                Business Management &amp;
+                                Organizational Behavior
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <th scope="row">
+                                8
+                            </th>
+
+                            <td>
+                                2023
+                            </td>
+
+                            <td>
+                                The Influence Of The Work Environment And
+                                Organizational Culture On Employee
+                                Performance With Satisfaction As An
+                                Intervening Variable
+                            </td>
+
+                            <td>
+                                Jurnal
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+
+                    <tfoot>
+
+                        <tr>
+
+                            <th scope="row" colspan="3">
+                                Jumlah Publikasi
+                            </th>
+
+                            <td colspan="3">
+                                8 publikasi penelitian
+                            </td>
+
+                        </tr>
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BIDANG KEAHLIAN
+             ========================= -->
+
+        <section aria-labelledby="keahlian">
+
+            <h2 id="keahlian">
+                Bidang Keahlian Dosen
+            </h2>
+
+
+            <ol>
+
+                <li>
+                    Manajemen Sumber Daya Manusia
+
+                    <ul>
+                        <li>Kinerja Karyawan</li>
+                        <li>Kepuasan Kerja</li>
+                        <li>Organizational Behavior</li>
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    Kepemimpinan dan Organisasi
+
+                    <ul>
+                        <li>Leadership</li>
+                        <li>Organizational Culture</li>
+                        <li>Organizational Citizenship Behavior</li>
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    Manajemen Bisnis
+
+                    <ul>
+                        <li>Innovation Management</li>
+                        <li>Business Performance</li>
+                        <li>Strategic Management</li>
+                    </ul>
+
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- =========================
+             METODOLOGI PENELITIAN
+             ========================= -->
+
+        <section
+            aria-labelledby="metodologi"
+            class="metodologi"
+        >
+
+            <h2 id="metodologi">
+                Alur Metodologi Riset
+            </h2>
+
+
+            <figure>
+
+                <div class="alur">
+
+                    <div class="tahap">
+                        Identifikasi Masalah
+                    </div>
+
+                    <div class="panah">
+                        &darr;
+                    </div>
+
+
+                    <div class="tahap">
+                        Studi Literatur
+                    </div>
+
+                    <div class="panah">
+                        &darr;
+                    </div>
+
+
+                    <div class="tahap">
+                        Pengumpulan Data
+                    </div>
+
+                    <div class="panah">
+                        &darr;
+                    </div>
+
+
+                    <div class="tahap">
+                        Analisis Data
+                    </div>
+
+                    <div class="panah">
+                        &darr;
+                    </div>
+
+
+                    <div class="tahap">
+                        Evaluasi Hasil
+                    </div>
+
+                    <div class="panah">
+                        &darr;
+                    </div>
+
+
+                    <div class="tahap">
+                        Kesimpulan
+                    </div>
+
+                </div>
+
+
+                <figcaption>
+                    Gambar 1. Diagram alur umum metodologi penelitian
+                    mulai dari identifikasi masalah hingga penarikan
+                    kesimpulan.
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+
+        <!-- =========================
+             DESKRIPSI RISET
+             ========================= -->
+
+        <section aria-labelledby="riset">
+
+            <h2 id="riset">
+                Deskripsi Riset
+            </h2>
+
+
+            <p class="deskripsi">
+
+                Penelitian dalam bidang manajemen memanfaatkan data
+                organisasi untuk memahami berbagai permasalahan,
+                menguji hubungan antarvariabel, dan menghasilkan
+                rekomendasi yang relevan.
+
+                Dalam penyusunan dokumen HTML, karakter
+                &lt; dan &gt; dapat digunakan untuk merepresentasikan
+                simbol tertentu, sedangkan &amp; digunakan sebagai
+                entitas karakter ampersand.
+
+                Hasil penelitian &copy; 2026 dapat digunakan sebagai
+                referensi untuk pengembangan pengetahuan di bidang
+                manajemen.
+
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SUMBER DATA
+             ========================= -->
+
+        <section aria-labelledby="sumber">
+
+            <h2 id="sumber">
+                Sumber Data Publikasi
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    Hasanuddin Journal of Applied Business and
+                    Entrepreneurship, Universitas Hasanuddin.
+                </li>
+
+                <li>
+                    Hasanuddin University Scholar.
+                </li>
+
+                <li>
+                    Jurnal Mirai Management.
+                </li>
+
+                <li>
+                    The Scientia Law and Economics Review.
+                </li>
+
+                <li>
+                    SINTA - Science and Technology Index.
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Program Studi Manajemen,
+            Universitas Hasanuddin.
+        </p>
+
+        <p>
+            Tugas Mandiri Modul 2 -
+            Standardisasi Kode dan Pengorganisasian Konten Web.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
