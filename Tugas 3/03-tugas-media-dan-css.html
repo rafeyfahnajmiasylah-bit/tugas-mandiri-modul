@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemutar Media Kuliah Responsif</title>
+    <link rel="stylesheet" href="03-tugas-style.css">
+</head>
+
+<body>
+
+<main>
+    <article class="media-card is-highlighted">
+
+        <header class="media-card__header">
+            <p class="media-card__label">MEDIA PEMBELAJARAN</p>
+            <h1 class="media-card__title">Pemutar Media Kuliah</h1>
+            <p class="media-card__subtitle">
+                Komunikasi Data pada Model OSI Layer
+            </p>
+        </header>
+
+        <figure class="media-card__cover">
+            <picture>
+                <source
+                    media="(min-width: 768px)"
+                    srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?fm=webp&fit=crop&w=1200&q=80"
+                    type="image/webp">
+
+                <source
+                    media="(max-width: 767px)"
+                    srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?fm=webp&fit=crop&w=700&q=80"
+                    type="image/webp">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?fit=crop&w=1200&q=80"
+                    alt="Ilustrasi pembelajaran teknologi dan jaringan komputer">
+            </picture>
+
+            <figcaption>
+                Media pembelajaran mengenai komunikasi data dan model OSI.
+            </figcaption>
+        </figure>
+
+        <section class="media-card__video">
+            <h2>Video Kuliah</h2>
+
+            <div class="media-card__video-container">
+                <video
+                    controls
+                    preload="metadata"
+                    poster="https://img.youtube.com/vi/UJn-fbxWbGs/maxresdefault.jpg">
+
+                    <source
+                        src="video-kuliah.webm"
+                        type="video/webm">
+
+                    <source
+                        src="Animasi Komunikasi Data Pada OSI Layer (2022).mp4"
+                        type="video/mp4">
+
+                    Browser Anda tidak mendukung pemutar video.
+                </video>
+            </div>
+
+            <div class="media-card__source">
+                <h3>Sumber Video</h3>
+
+                <p>
+                    Video animasi motion graphics yang menjelaskan materi
+                    mengenai komunikasi data pada model OSI layer, dibuat
+                    sebagai video pembelajaran untuk mahasiswa yang
+                    mempelajari mata kuliah terkait jaringan.
+                </p>
+
+                <p>
+                    <strong>Animated by:</strong>
+                    Sultan Ilyas Arsalillah<br>
+
+                    <strong>Voiced by:</strong>
+                    Galih Prasetya Giri Harmawan
+                </p>
+
+                <p>
+                    <strong>Software yang digunakan:</strong>
+                    Adobe After Effects, Adobe Premiere Pro, dan Adobe Illustrator.
+                </p>
+
+                <p>
+                    <strong>Sumber:</strong>
+                    <a
+                        href="https://youtu.be/UJn-fbxWbGs"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        YouTube
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <section class="media-card__audio">
+            <h2>Audio Kuliah</h2>
+
+            <audio controls>
+                <source
+                    src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+                    type="audio/mpeg">
+
+                Browser Anda tidak mendukung pemutar audio.
+            </audio>
+        </section>
+
+        <section class="media-card__description">
+            <h2>Deskripsi Materi</h2>
+
+            <p class="media-card__text">
+                Materi kuliah ini membahas komunikasi data pada model
+                OSI layer. Video dan audio digunakan sebagai media
+                pendukung agar mahasiswa dapat memahami materi secara
+                lebih fleksibel.
+            </p>
+        </section>
+
+    </article>
+</main>
+
+</body>
+</html>
