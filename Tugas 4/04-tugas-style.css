@@ -113,3 +113,97 @@ footer {
     background: #ffffff;
     border-top: 1px solid #e4e7ec;
 }
+/* Layout utama */
+
+.journal-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.sidebar-panel,
+.article-section,
+.right-panel {
+    min-width: 0;
+}
+
+/* Desktop mulai 992px */
+
+@media (min-width: 992px) {
+    .journal-layout {
+        grid-template-columns: 200px minmax(0, 1fr) 220px;
+    }
+}
+
+/* Styling kolom */
+
+.sidebar-panel,
+.right-panel {
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 16px;
+}
+
+.sidebar-panel h2,
+.article-section h2,
+.right-panel h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #172033;
+    font-size: 1.15rem;
+}
+
+/* Sidebar */
+
+.sidebar-panel ul,
+.right-panel ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.sidebar-panel li,
+.right-panel li {
+    margin-bottom: 10px;
+}
+
+.sidebar-panel a {
+    color: #667085;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.sidebar-panel a:hover {
+    color: #4f46e5;
+}
+
+/* Area artikel */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.article-card {
+    border: 1px solid #e4e7ec;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.article-card .card-body {
+    padding: 20px;
+}
+
+.article-card .card-title {
+    margin-bottom: 10px;
+    color: #172033;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.article-card .card-text {
+    margin-bottom: 0;
+    color: #667085;
+    font-size: 0.85rem;
+}
