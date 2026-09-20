@@ -207,3 +207,25 @@ footer {
     color: #667085;
     font-size: 0.85rem;
 }
+.article-category {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #4f46e5;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.article-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #3730a3;
+    font-size: 0.78rem;
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.article-link:hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
