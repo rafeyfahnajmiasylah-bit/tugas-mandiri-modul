@@ -4,218 +4,336 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Bootstrap 5 melalui CDN + SRI -->
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous"
->
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+    >
+
     <link rel="stylesheet" href="04-tugas-style.css">
 
     <title>Ruang Ilmiah | Portal Jurnal Fakultas</title>
 </head>
+
 <body>
-
     <header class="site-header">
-    <div class="header-inner">
+        <div class="header-inner">
+            <a class="brand" href="#beranda" aria-label="Ruang Ilmiah">
+                <img
+                    class="brand-logo"
+                    src="assets/logo-unhas.jpg"
+                    alt="Logo Universitas Hasanuddin"
+                >
+                <span class="brand-copy">
+                    <span class="brand-title">Ruang Ilmiah</span>
+                    <span class="brand-subtitle">Portal Jurnal Fakultas</span>
+                </span>
+            </a>
 
-        <a class="brand" href="#beranda">
-            <span class="brand-mark">RI</span>
-
-            <span>
-                <span class="brand-title">Ruang Ilmiah</span>
-                <span class="brand-subtitle">Portal Jurnal Fakultas</span>
-            </span>
-        </a>
-
-        <nav class="main-nav" aria-label="Navigasi utama">
-            <a class="nav-link active" href="#beranda">Beranda</a>
-            <a class="nav-link" href="#artikel">Artikel</a>
-            <a class="nav-link" href="#kategori">Kategori</a>
-            <a class="nav-link" href="#panduan">Panduan</a>
-            <a class="nav-link" href="#tentang">Tentang</a>
-        </nav>
-
-    </div>
-</header>
+            <!-- Navigasi menggunakan Flexbox -->
+            <nav class="main-nav" aria-label="Navigasi utama">
+                <a class="nav-link active" href="#beranda">Beranda</a>
+                <a class="nav-link" href="#artikel">Artikel</a>
+                <a class="nav-link" href="#kategori">Kategori</a>
+                <a class="nav-link" href="#panduan">Panduan</a>
+                <a class="nav-link" href="#tentang">Tentang</a>
+            </nav>
+        </div>
+    </header>
 
     <main id="beranda">
-
-    <div class="journal-layout">
-
-        <!-- Kolom kiri -->
-        <aside class="sidebar-panel" id="kategori">
-            <h2>Kategori</h2>
-
-            <ul>
-                <li>
-                    <a href="#artikel">Teknologi &amp; Informatika</a>
-                </li>
-                <li>
-                    <a href="#artikel">Sains &amp; Data</a>
-                </li>
-                <li>
-                    <a href="#artikel">Sosial &amp; Pendidikan</a>
-                </li>
-                <li>
-                    <a href="#artikel">Bisnis &amp; Ekonomi</a>
-                </li>
-                <li>
-                    <a href="#artikel">Kesehatan</a>
-                </li>
-            </ul>
-        </aside>
-
-        <!-- Kolom tengah -->
-        <section class="article-section" id="artikel">
-            <h2>Artikel Pilihan</h2>
-
-            <div class="article-grid">
-
-    <article class="card article-card">
-        <div class="card-body">
-            <span class="article-category">BIG DATA & AI</span>
-
-            <h3 class="card-title">
-                Revolusi Psikologi Digital: Membaca Perilaku Gen Z
-                Lewat Big Data dan AI
-            </h3>
-
-            <p class="card-text">
-                Artikel ini membahas pemanfaatan big data dan AI untuk
-                memahami perilaku Gen Z melalui jejak digital, termasuk
-                isu cyberbullying dan digital well-being.
+        <section class="page-intro" aria-labelledby="page-title">
+            <p class="eyebrow">Fakultas Teknik · Universitas Hasanuddin</p>
+            <h1 id="page-title">Publikasi Ilmiah</h1>
+            <p class="intro-text">
+                Jelajahi publikasi dan penelitian dari berbagai departemen di Fakultas Teknik.
             </p>
+        </section>
 
-            <div class="article-footer">
-                <span>BINUS University</span>
-                <span>2026</span>
-            </div>
+        <!-- CSS Grid utama: 200px | fleksibel | 220px -->
+        <div class="journal-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar-panel" id="kategori" aria-labelledby="category-title">
+                <div class="panel-heading">
+                    <p class="panel-kicker">Departemen</p>
+                    <h2 id="category-title">Kategori</h2>
+                </div>
 
-            <a
-                href="https://binus.ac.id/malang/2026/08/revolusi-psikologi-digital-membaca-perilaku-gen-z-lewat-big-data-dan-ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="article-link"
-            >
-                Baca artikel &rarr;
-            </a>
+                <ul class="category-list">
+                    <li><a href="#artikel"><span>Teknik Informatika</span><span>02</span></a></li>
+                    <li><a href="#artikel"><span>Teknik Kelautan</span><span>02</span></a></li>
+                    <li><a href="#artikel"><span>Teknik Sipil</span><span>01</span></a></li>
+                    <li><a href="#artikel"><span>Teknik Geologi</span><span>02</span></a></li>
+                    <li><a href="#artikel"><span>Teknik Elektro</span><span>02</span></a></li>
+                </ul>
+
+                <div class="side-note">
+                    <strong>Eksplorasi</strong>
+                    <p>
+                        Pilih departemen untuk menemukan publikasi sesuai bidang keilmuan.
+                    </p>
+                </div>
+            </aside>
+
+            <!-- Konten utama -->
+            <section class="article-section" id="artikel" aria-labelledby="article-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="panel-kicker">Publikasi terbaru</p>
+                        <h2 id="article-title">Artikel Terbaru</h2>
+                    </div>
+                    <span class="article-total">10 artikel</span>
+                </div>
+
+                <!-- Micro-grid: repeat(auto-fit, minmax(...)) -->
+                <div class="article-grid">
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category">INFORMATIKA</span>
+                                <span class="article-year">2026</span>
+                            </div>
+                            <h3 class="card-title">
+                                Strategi Branding dan AI-Driven Content Marketing untuk Peningkatan Daya Saing UMKM Bolu Pisang di Kabupaten Polewali Mandar
+                            </h3>
+                            <p class="card-text">
+                                Pemanfaatan AI generatif untuk mendukung strategi konten dan daya saing UMKM.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Informatika</span>
+                                <a class="article-link" href="#artikel-1" aria-label="Detail artikel 1">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category pink">INFORMATIKA</span>
+                                <span class="article-year">2026</span>
+                            </div>
+                            <h3 class="card-title">
+                                Edukasi Keamanan Siber sebagai Upaya Peningkatan Literasi Digital Guru dan Siswa di SMAN 3 Polewali
+                            </h3>
+                            <p class="card-text">
+                                Edukasi cybersecurity dengan fokus pada phishing dan keamanan digital.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Informatika</span>
+                                <a class="article-link" href="#artikel-2" aria-label="Detail artikel 2">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category olive">KELAUTAN</span>
+                                <span class="article-year">2025</span>
+                            </div>
+                            <h3 class="card-title">
+                                Penerapan Smart Port System Berbasis IoT untuk Efisiensi Manajemen Operasional Pelabuhan di Indonesia
+                            </h3>
+                            <p class="card-text">
+                                IoT, automation, data analytics, dan konsep Port 4.0 untuk operasional pelabuhan.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Kelautan</span>
+                                <a class="article-link" href="#artikel-3" aria-label="Detail artikel 3">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category green">KELAUTAN</span>
+                                <span class="article-year">2026</span>
+                            </div>
+                            <h3 class="card-title">
+                                Strengthening National Capacity in Underwater Technology: Gap Analysis, Innovation Ecosystem, and the 2026–2045 Roadmap
+                            </h3>
+                            <p class="card-text">
+                                Membahas ROV, AUV, teknologi otonom, dan arah pengembangan teknologi bawah air.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Kelautan</span>
+                                <a class="article-link" href="#artikel-4" aria-label="Detail artikel 4">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category">AI &amp; DATA</span>
+                                <span class="article-year">2025</span>
+                            </div>
+                            <h3 class="card-title">
+                                AI dalam Geoteknik: Inovasi Doktor Baru Teknik Sipil FT Unhas untuk Efisiensi Investigasi Tanah
+                            </h3>
+                            <p class="card-text">
+                                AI, machine learning, dan data geoteknik untuk mendukung investigasi tanah.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Sipil</span>
+                                <a class="article-link" href="#artikel-5" aria-label="Detail artikel 5">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category pink">GEO-SPATIAL</span>
+                                <span class="article-year">2025</span>
+                            </div>
+                            <h3 class="card-title">
+                                Peran Serta Informasi Peta Geologi Lembar Pangkajene dalam Pengembangan Wilayah Kabupaten Pangkajene dan Kepulauan
+                            </h3>
+                            <p class="card-text">
+                                Pemanfaatan GIS, peta digital, dan data geologi dalam pengembangan wilayah.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Geologi</span>
+                                <a class="article-link" href="#artikel-6" aria-label="Detail artikel 6">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category olive">GEOHERITAGE</span>
+                                <span class="article-year">2026</span>
+                            </div>
+                            <h3 class="card-title">
+                                The Introducing the Geological Reserve in the Context of Its Preservation as an Aspect of Geoheritage in the Mangilu Area, Pangkep Regency
+                            </h3>
+                            <p class="card-text">
+                                Kajian geologi, geoheritage, dan upaya pelestarian kawasan Mangilu.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Geologi</span>
+                                <a class="article-link" href="#artikel-7" aria-label="Detail artikel 7">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category green">IOT</span>
+                                <span class="article-year">2025</span>
+                            </div>
+                            <h3 class="card-title">
+                                Sosialisasi Penerapan Teknologi Internet of Things (IoT) untuk Pengendalian Suhu dan Kelembapan pada Budidaya Jamur Tiram
+                            </h3>
+                            <p class="card-text">
+                                Penerapan IoT untuk pemantauan kondisi lingkungan pada budidaya jamur tiram.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Elektro</span>
+                                <a class="article-link" href="#artikel-8" aria-label="Detail artikel 8">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category">SMART CAMPUS</span>
+                                <span class="article-year">2024</span>
+                            </div>
+                            <h3 class="card-title">
+                                Pengembangan Perangkat Reader Hybrid Cerdas Berbasis Website untuk Implementasi Smart Campus
+                            </h3>
+                            <p class="card-text">
+                                Pengembangan website dan perangkat cerdas untuk mendukung konsep smart campus.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Elektro</span>
+                                <a class="article-link" href="#artikel-9" aria-label="Detail artikel 9">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card article-card h-100">
+                        <div class="card-body">
+                            <div class="article-topline">
+                                <span class="article-category pink">ENVIRONMENTAL IOT</span>
+                                <span class="article-year">2024</span>
+                            </div>
+                            <h3 class="card-title">
+                                Rancang Bangun Sistem Pemantauan Kualitas Udara Berbasis Internet of Things (IoT) Menggunakan Thingspeak dan Website
+                            </h3>
+                            <p class="card-text">
+                                IoT dan website untuk pemantauan kualitas udara secara berkala.
+                            </p>
+                            <div class="article-footer">
+                                <span>Teknik Elektro</span>
+                                <a class="article-link" href="#artikel-10" aria-label="Detail artikel 10">Detail →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Kolom kanan -->
+            <aside class="right-panel" aria-labelledby="popular-title">
+                <div class="panel-heading">
+                    <p class="panel-kicker">Paling banyak dibaca</p>
+                    <h2 id="popular-title">Terpopuler</h2>
+                </div>
+
+                <ol class="popular-list">
+                    <li>
+                        <span class="popular-number">01</span>
+                        <div><h3>Strategi Branding dan AI-Driven Content Marketing</h3><span>1.482 pembaca</span></div>
+                    </li>
+                    <li>
+                        <span class="popular-number">02</span>
+                        <div><h3>Penerapan Smart Port System Berbasis IoT</h3><span>1.136 pembaca</span></div>
+                    </li>
+                    <li>
+                        <span class="popular-number">03</span>
+                        <div><h3>AI dalam Geoteknik</h3><span>964 pembaca</span></div>
+                    </li>
+                    <li>
+                        <span class="popular-number">04</span>
+                        <div><h3>Rancang Bangun Sistem Pemantauan Kualitas Udara</h3><span>817 pembaca</span></div>
+                    </li>
+                </ol>
+
+                <div class="quick-box" id="panduan">
+                    <p class="panel-kicker">Panduan</p>
+                    <h3>Menemukan publikasi</h3>
+                    <p>
+                        Jelajahi artikel berdasarkan departemen dan topik penelitian.
+                    </p>
+                    <a href="#kategori">Lihat kategori &rarr;</a>
+                </div>
+            </aside>
         </div>
-    </article>
-
-
-    <article class="card article-card">
-        <div class="card-body">
-            <span class="article-category">GENERATIVE AI</span>
-
-            <h3 class="card-title">
-                How Gen Z Uses Gen AI—and Why It Worries Them
-            </h3>
-
-            <p class="card-text">
-                Artikel ini membahas pola penggunaan generative AI oleh
-                Gen Z serta kekhawatiran yang muncul terhadap penggunaan
-                teknologi AI dalam kehidupan dan dunia kerja.
-            </p>
-
-            <div class="article-footer">
-                <span>Harvard Business Review</span>
-                <span>2026</span>
-            </div>
-
-            <a
-                href="https://hbr.org/2026/01/how-gen-z-uses-gen-ai-and-why-it-worries-them"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="article-link"
-            >
-                Baca artikel &rarr;
-            </a>
-        </div>
-    </article>
-
-
-    <article class="card article-card">
-        <div class="card-body">
-            <span class="article-category">ARTIFICIAL INTELLIGENCE</span>
-
-            <h3 class="card-title">
-                Generasi Z sebagai Pengguna Utama Artificial Intelligence (AI)
-            </h3>
-
-            <p class="card-text">
-                Artikel membahas tingkat penggunaan berbagai alat AI
-                oleh Gen Z serta perannya dalam menunjang aktivitas
-                sehari-hari.
-            </p>
-
-            <div class="article-footer">
-                <span>UNESA</span>
-                <span>2024</span>
-            </div>
-
-            <a
-                href="https://pgsd.fip.unesa.ac.id/post/dunia-gen-z-generasi-z-sebagai-pengguna-utama-artificial-intelligence-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="article-link"
-            >
-                Baca artikel &rarr;
-            </a>
-        </div>
-    </article>
-
-
-    <article class="card article-card">
-        <div class="card-body">
-            <span class="article-category">AI & PRODUCTIVITY</span>
-
-            <h3 class="card-title">
-                AI adoption is boosting productivity, particularly among
-                Indonesia's Gen Z
-            </h3>
-
-            <p class="card-text">
-                Laporan ini membahas hubungan antara adopsi AI dan
-                produktivitas pekerja, dengan perhatian khusus pada
-                Gen Z di Indonesia dan tantangan kesenjangan keterampilan.
-            </p>
-
-            <div class="article-footer">
-                <span>PwC Indonesia</span>
-                <span>2026</span>
-            </div>
-
-            <a
-                href="https://www.pwc.com/id/en/media-centre/press-release/2026/english/hopes-and-fears-2025.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="article-link"
-            >
-                Baca artikel &rarr;
-            </a>
-        </div>
-    </article>
-
-</div>
-
-</main>
-       <aside id="kategori">
-    <h2>Kategori</h2>
-</aside>
-
-       <section id="artikel">
-    <h2>Artikel Pilihan</h2>
-</section>
-
-        <aside>
-            <h2>Artikel Populer</h2>
-        </aside>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Ruang Ilmiah</p>
-    </footer>
+    <footer class="site-footer" id="tentang">
+        <div class="footer-inner">
+            <div>
+                <strong>Ruang Ilmiah</strong>
+                <p>Portal Jurnal Fakultas Teknik · Universitas Hasanuddin &copy; 2026.</p>
+            </div>
 
+            <div class="footer-links">
+                <a href="#beranda">Beranda</a>
+                <a href="#artikel">Artikel</a>
+                <a href="#kategori">Kategori</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
