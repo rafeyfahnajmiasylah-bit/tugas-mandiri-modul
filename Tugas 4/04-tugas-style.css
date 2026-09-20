@@ -22,6 +22,7 @@
     --pomelo-olive: #9f9679;
 
     --accent-soft: #f4e7eb;
+
     --shadow-sm: 0 8px 24px rgba(63, 41, 50, 0.07);
 
     --radius-lg: 18px;
@@ -29,7 +30,9 @@
 }
 
 
-/* ---------- Base ---------- */
+/* =========================================================
+   BASE
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -81,6 +84,7 @@ p {
     z-index: 1000;
 
     background: rgba(255, 255, 255, 0.97);
+
     border-bottom: 1px solid var(--border);
 
     backdrop-filter: blur(10px);
@@ -98,6 +102,9 @@ p {
 
     gap: 24px;
 }
+
+
+/* ---------- Brand ---------- */
 
 .brand {
     display: inline-flex;
@@ -119,6 +126,7 @@ p {
     object-fit: contain;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     background: #ffffff;
@@ -135,7 +143,6 @@ p {
 
 .brand-title {
     font-size: 0.96rem;
-
     font-weight: 800;
 
     line-height: 1.15;
@@ -162,7 +169,6 @@ p {
     display: flex;
 
     align-items: center;
-
     justify-content: flex-end;
 
     flex-wrap: wrap;
@@ -265,7 +271,7 @@ main {
 
 /* =========================================================
    MAIN THREE-COLUMN GRID
-   >= 992px:
+   Desktop:
    200px | flexible | 220px
    ========================================================= */
 
@@ -286,9 +292,14 @@ main {
 }
 
 @media (min-width: 992px) {
+
     .journal-layout {
-        grid-template-columns: 200px minmax(0, 1fr) 220px;
+        grid-template-columns:
+            200px
+            minmax(0, 1fr)
+            220px;
     }
+
 }
 
 
@@ -302,19 +313,20 @@ main {
 
     background: var(--surface);
 
-    border:
-        1px solid var(--border);
+    border: 1px solid var(--border);
 
     border-radius: var(--radius-lg);
 }
 
 @media (min-width: 768px) {
+
     .sidebar-panel,
     .right-panel {
         position: sticky;
 
         top: 88px;
     }
+
 }
 
 .panel-heading h2,
@@ -353,7 +365,6 @@ main {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 7px;
@@ -387,7 +398,7 @@ main {
 }
 
 
-/* ---------- Side note ---------- */
+/* ---------- Side Note ---------- */
 
 .side-note {
     display: flex;
@@ -400,8 +411,7 @@ main {
 
     padding-top: 13px;
 
-    border-top:
-        1px solid var(--border);
+    border-top: 1px solid var(--border);
 }
 
 .side-note-mark {
@@ -433,7 +443,6 @@ main {
     display: flex;
 
     align-items: flex-end;
-
     justify-content: space-between;
 
     gap: 12px;
@@ -458,10 +467,7 @@ main {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(
-                240px,
-                1fr
-            )
+            minmax(240px, 1fr)
         );
 
     gap: 13px;
@@ -477,8 +483,7 @@ main {
 
     overflow: hidden;
 
-    border:
-        1px solid var(--border);
+    border: 1px solid var(--border);
 
     border-radius: var(--radius-lg);
 
@@ -502,6 +507,7 @@ main {
     height: 100%;
 
     content: "";
+
     background: var(--amaranth);
 }
 
@@ -536,13 +542,12 @@ main {
 }
 
 
-/* ---------- Article metadata ---------- */
+/* ---------- Article Metadata ---------- */
 
 .article-meta {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 8px;
@@ -581,7 +586,7 @@ main {
 }
 
 
-/* ---------- Article title ---------- */
+/* ---------- Article Title ---------- */
 
 .article-card .card-title {
     min-height: 74px;
@@ -598,7 +603,7 @@ main {
 }
 
 
-/* ---------- Article description ---------- */
+/* ---------- Article Description ---------- */
 
 .article-card .card-text {
     margin-bottom: 14px;
@@ -611,13 +616,12 @@ main {
 }
 
 
-/* ---------- Article footer ---------- */
+/* ---------- Article Footer ---------- */
 
 .article-footer {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 8px;
@@ -626,8 +630,7 @@ main {
 
     padding-top: 10px;
 
-    border-top:
-        1px solid var(--border);
+    border-top: 1px solid var(--border);
 
     color: var(--text-soft);
 
@@ -673,8 +676,7 @@ main {
 
     padding: 10px 0;
 
-    border-bottom:
-        1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .popular-list li:last-child {
@@ -710,7 +712,7 @@ main {
 }
 
 
-/* ---------- Quick box ---------- */
+/* ---------- Quick Box ---------- */
 
 .quick-box {
     margin-top: 15px;
@@ -758,8 +760,7 @@ main {
    ========================================================= */
 
 .site-footer {
-    border-top:
-        1px solid var(--border);
+    border-top: 1px solid var(--border);
 
     background: var(--surface);
 }
@@ -774,19 +775,27 @@ main {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
-    gap: 18px;
+    gap: 24px;
 
     padding: 18px 0;
 }
 
-.footer-inner strong {
+
+/* ---------- Footer Brand ---------- */
+
+.footer-brand strong {
+    display: block;
+
+    color: var(--text-main);
+
     font-size: 0.73rem;
+
+    font-weight: 800;
 }
 
-.footer-inner p {
+.footer-brand p {
     margin: 3px 0 0;
 
     color: var(--text-soft);
@@ -794,12 +803,42 @@ main {
     font-size: 0.6rem;
 }
 
+
+/* ---------- Student Identity ---------- */
+
+.student-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 0.65rem;
+
+    font-weight: 650;
+}
+
+.student-info span:last-child {
+    color: var(--text-soft);
+
+    font-size: 0.6rem;
+
+    font-weight: 500;
+}
+
+
+/* ---------- Footer Links ---------- */
+
 .footer-links {
     display: flex;
 
+    align-items: center;
+
     flex-wrap: wrap;
 
-    gap: 12px;
+    gap: 18px;
 
     color: var(--text-muted);
 
@@ -821,6 +860,7 @@ main {
    ========================================================= */
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+
     .journal-layout {
         grid-template-columns:
             200px
@@ -830,6 +870,7 @@ main {
     .right-panel {
         display: none;
     }
+
 }
 
 
@@ -840,6 +881,7 @@ main {
    ========================================================= */
 
 @media (max-width: 767.98px) {
+
     .header-inner {
         width: calc(100% - 28px);
 
@@ -922,19 +964,33 @@ main {
         grid-template-columns: 1fr;
     }
 
+
+    /* Footer mobile */
     .footer-inner {
         width: calc(100% - 28px);
 
         align-items: flex-start;
 
         flex-direction: column;
+
+        gap: 14px;
     }
+
+    .footer-links {
+        width: 100%;
+
+        gap: 12px 18px;
+    }
+
 }
 
 
-/* Small phones */
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
 
 @media (max-width: 430px) {
+
     .sidebar-panel,
     .right-panel {
         padding: 15px;
@@ -943,4 +999,5 @@ main {
     .article-card .card-body {
         padding: 15px 15px 15px 18px;
     }
+
 }
