@@ -31,10 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!is_string($type) || !is_string($amountInput)) {
             $message = 'Data transaksi tidak valid.';
-        } elseif (!is_numeric($amountInput)) {
-            $message = 'Jumlah transaksi harus berupa angka.';
-        } else {
-            $amount = (float) $amountInput;
+        } elseif (
+    !preg_match('/^\d+(?:\.\d{1,2})?$/', $amountInput)
+) {
+    $message = 'Jumlah transaksi harus berupa angka desimal positif.';
+} else {
+    $amount = (float) $amountInput;
 
             if ($amount <= 0 || !is_finite($amount)) {
                 $message = 'Jumlah transaksi harus berupa angka positif.';
