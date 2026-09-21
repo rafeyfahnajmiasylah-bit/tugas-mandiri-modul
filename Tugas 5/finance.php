@@ -20,6 +20,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
 $message = '';
 
+// Memproses transaksi setelah validasi CSRF dan input.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $csrfToken = $_POST['csrf_token'] ?? '';
 
