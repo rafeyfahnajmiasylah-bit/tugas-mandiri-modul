@@ -10,7 +10,20 @@ class Transaction
         private float $amount
     ) {
     }
+public function getId(): int
+{
+    return $this->id;
+}
 
+public function getType(): string
+{
+    return $this->type;
+}
+
+public function getAmount(): float
+{
+    return $this->amount;
+}
     public function process(float &$balance): bool
     {
         return match ($this->type) {
