@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Halaman buku tamu E-Library.
+ * Menangani koneksi database, validasi, CSRF,
+ * penyimpanan, dan penampilan data buku tamu.
+ */
+
 session_start();
 
 require __DIR__ . '/GuestBook.php';
