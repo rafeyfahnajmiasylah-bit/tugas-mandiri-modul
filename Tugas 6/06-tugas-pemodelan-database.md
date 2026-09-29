@@ -169,3 +169,58 @@ entitas utama:
 
 Setiap tabel memiliki primary key masing-masing dan hubungan antar
 tabel akan menggunakan foreign key.
+
+## 4. Rancangan Tabel Akhir
+
+Berdasarkan hasil normalisasi hingga Third Normal Form (3NF), sistem
+E-Library memiliki empat tabel utama, yaitu Mahasiswa, Penerbit, Buku,
+dan Peminjaman.
+
+### 4.1 Tabel Mahasiswa
+
+| Nama Kolom    | Tipe Data   | Constraint | Keterangan              |
+|---------------|-------------|------------|-------------------------|
+| nim           | VARCHAR(15) | PRIMARY KEY| Nomor induk mahasiswa   |
+| nama_mahasiswa| VARCHAR(100)| NOT NULL   | Nama mahasiswa          |
+| program_studi | VARCHAR(100)| NOT NULL   | Program studi mahasiswa |
+| email         | VARCHAR(100)| UNIQUE     | Email mahasiswa         |
+| no_telepon    | VARCHAR(15) | -          | Nomor telepon mahasiswa |
+
+### 4.2 Tabel Penerbit
+
+| Nama Kolom    | Tipe Data   | Constraint | Keterangan            |
+|---------------|-------------|------------|-----------------------|
+| id_penerbit   | INT         | PRIMARY KEY| ID penerbit           |
+| nama_penerbit | VARCHAR(100)| NOT NULL   | Nama penerbit         |
+| alamat        | VARCHAR(200)| -          | Alamat penerbit       |
+| no_telepon    | VARCHAR(15) | -          | Nomor telepon penerbit|
+
+### 4.3 Tabel Buku
+
+| Nama Kolom  | Tipe Data    | Constraint | Keterangan       |
+|-------------|--------------|------------|------------------|
+| id_buku     | INT          | PRIMARY KEY| ID buku          |
+| judul_buku  | VARCHAR(150) | NOT NULL   | Judul buku       |
+| penulis     | VARCHAR(100) | NOT NULL   | Nama penulis     |
+| tahun_terbit| YEAR         | NOT NULL   | Tahun terbit buku|
+| kategori    | VARCHAR(50)  | -          | Kategori buku    |
+| id_penerbit | INT          | FOREIGN KEY| ID penerbit      |
+
+### 4.4 Tabel Peminjaman
+
+| Nama Kolom          | Tipe Data   | Constraint  | Keterangan             |
+|---------------------|-------------|-------------|------------------------|
+| id_peminjaman       | INT         | PRIMARY KEY | ID transaksi peminjaman|
+| nim                 | VARCHAR(15) | FOREIGN KEY | NIM mahasiswa          |
+| id_buku             | INT         | FOREIGN KEY | ID buku yang dipinjam  |
+| tanggal_peminjaman  | DATE        | NOT NULL    | Tanggal peminjaman     |
+| tanggal_jatuh_tempo | DATE        | NOT NULL    | Batas pengembalian     |
+| tanggal_pengembalian| DATE        | NULL        | Tanggal pengembalian   |
+
+### 4.5 Relasi Foreign Key
+
+| Tabel      | Foreign Key | Tabel Referensi | Kolom Referensi |
+|------------|-------------|-----------------|-----------------|
+| Buku       | id_penerbit | Penerbit        | id_penerbit     |
+| Peminjaman | nim         | Mahasiswa       | nim             |
+| Peminjaman | id_buku     | Buku            | id_buku         |
