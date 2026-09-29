@@ -7,7 +7,7 @@ require __DIR__ . '/GuestBook.php';
 $host = '127.0.0.1';
 $dbname = 'e_library';
 $username = 'root';
-$password = 'Refa0659#';
+$password = getenv('DB_PASSWORD') ?: '';
 
 try {
     $pdo = new PDO(
