@@ -224,3 +224,46 @@ dan Peminjaman.
 | Buku       | id_penerbit | Penerbit        | id_penerbit     |
 | Peminjaman | nim         | Mahasiswa       | nim             |
 | Peminjaman | id_buku     | Buku            | id_buku         |
+
+## 5. Entity Relationship Diagram (ERD)
+
+### 5.1 Diagram ERD
+
+```mermaid
+erDiagram
+    MAHASISWA ||--o{ PEMINJAMAN : melakukan
+    BUKU ||--o{ PEMINJAMAN : dipinjam
+    PENERBIT ||--o{ BUKU : menerbitkan
+
+    MAHASISWA {
+        VARCHAR nim PK
+        VARCHAR nama_mahasiswa
+        VARCHAR program_studi
+        VARCHAR email
+        VARCHAR no_telepon
+    }
+
+    PENERBIT {
+        INT id_penerbit PK
+        VARCHAR nama_penerbit
+        VARCHAR alamat
+        VARCHAR no_telepon
+    }
+
+    BUKU {
+        INT id_buku PK
+        VARCHAR judul_buku
+        VARCHAR penulis
+        YEAR tahun_terbit
+        VARCHAR kategori
+        INT id_penerbit FK
+    }
+
+    PEMINJAMAN {
+        INT id_peminjaman PK
+        VARCHAR nim FK
+        INT id_buku FK
+        DATE tanggal_peminjaman
+        DATE tanggal_jatuh_tempo
+        DATE tanggal_pengembalian
+    }
